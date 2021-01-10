@@ -7,7 +7,7 @@ budget_data_path = os.path.join('Resources','budget_data.csv')
 # Read in the csv data
 with open(budget_data_path,'r') as budget_data_file:
     #Split data on commas - using csv reader function - csv.reader()
-    budget_data_reader = csv.reader(budget_data_file, ',')
+    budget_data_reader = csv.reader(budget_data_file, delimiter=',')
 
     #Skip header
     next(budget_data_reader)
@@ -55,7 +55,12 @@ with open(budget_data_path,'r') as budget_data_file:
 
         # store the month for greatest decrease
         greatest_decrease_mo = diff_column.index(greatest_decrease)
-        
+
+        # Print to screen financial analysis
+        print(f"Financial Analysis")
+
+
+
         
          
 
