@@ -48,8 +48,14 @@ with open(budget_data_path,'r') as budget_data_file:
         greatest_increase = max(diff_column)
         
         # store the month for greatest increase
+        greatest_mo = diff_column.index(greatest_increase)
 
+        # calculate the greatest decrease in difference column/list (pl change)
+        greatest_decrease = min(diff_column)
 
+        # store the month for greatest decrease
+        greatest_decrease_mo = diff_column.index(greatest_decrease)
+        
         
          
 
