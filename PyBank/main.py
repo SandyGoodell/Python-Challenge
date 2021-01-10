@@ -42,15 +42,13 @@ with open(budget_data_path,'r') as budget_data_file:
 
 
             # calculate the average change in pl
-            # create a function to looks for zero denominator
-            def zero_exception()
-                try:
-                    avg_chg_pl = sum(diff_column)/len(diff_column)
-                except ZeroDivisionError:
-                    avg_chg_pl = 0
-            
-            
-
+            # look for zero denominator once you have
+            # the zero_exception then assign 0
+            try:
+                avg_chg_pl = sum(diff_column)/len(diff_column)
+            except ZeroDivisionError:
+                avg_chg_pl = 0
+                       
             # calculate the maximum - greatest increase in difference column/list (pl change)
             greatest_increase = max(diff_column)
         
@@ -63,8 +61,8 @@ with open(budget_data_path,'r') as budget_data_file:
             # store the month for greatest decrease
             greatest_decrease_mo = diff_column.index(greatest_decrease)
 
-        # Print to screen financial analysis
-        print(f"Financial Analysis")
+            # Print to screen financial analysis
+            print(f"Financial Analysis")
 
 
 
