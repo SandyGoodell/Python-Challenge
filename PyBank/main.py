@@ -62,7 +62,14 @@ with open(budget_data_path,'r') as budget_data_file:
             greatest_decrease_mo = diff_column.index(greatest_decrease)
 
             # Print to screen financial analysis
-            print(f"Financial Analysis")
+            print(f"Financial Analysis\n"
+            f"---------------------------\n"
+            f"Total Months: {total_mos}\n"
+            f"Total: {total_pl}\n"
+            f"Average Change: {avg_chg_pl}\n"
+            f"Greatest Increase in Profits: {list_mos[greatest_mo +1]} ({greatest_increase})\n"
+            f"Greatest Decrease in Profits: {list_mos[greatest_decrease_mo +1]}({greatest_decrease})\n"
+            
 
 
 
