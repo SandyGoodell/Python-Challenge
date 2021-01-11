@@ -42,7 +42,7 @@ with open(file_to_open, "r") as csvfile:
     f"-------------------------\n"
     f"Total Votes: {total_votes}\n"
     f"-------------------------\n")
-    # this needs to be while we are are in the candidates and do we need to sort the data by candidate?
+    # this needs to be while we are are in the candidates and do we need to sort the data by candidate
     # percentage is = to candidate_votes / total_votes 
     # percentage_votes = total_votes / candidate_votes
     # print(candidate_votes)
@@ -50,8 +50,12 @@ with open(file_to_open, "r") as csvfile:
         votes = candidate_votes.get(candidate)
         percentage_votes = (candidate_votes.get(candidate)/total_votes) * 100
         print(f"{candidate}): ({candidate_votes.get(candidate)}), {percentage_votes:.2f}% \n")
+        # add operator functions in code
+    import operator
+    winner_elec = max(candidate_votes.items(), key=operator.itemgetter(1)) [0]
+    print(f"Winner: {winner_elec} \n")
     # print(percentage_votes)
     # print(votes)
     # Print to txt file in Analysis folder
-        with open(output_path, 'w') as txtfile:
-            txtfile.write(f"text \n")
+    with open(output_path, 'w') as txtfile:
+        txtfile.write(f"text \n")
