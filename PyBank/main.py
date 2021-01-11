@@ -61,25 +61,25 @@ with open(budget_data_path,'r') as budget_data_file:
             # store the month for greatest decrease
             greatest_decrease_mo = diff_column.index(greatest_decrease)
 
-            # Print to screen financial analysis
-            print(f"Financial Analysis\n"
-            f"---------------------------\n"
-            f"Total Months: {total_mos}\n"
-            f"Total: {total_pl}\n"
-            f"Average Change: {avg_chg_pl}\n"
-            f"Greatest Increase in Profits: {list_mos[greatest_mo +1]} ({greatest_increase})\n"
-            f"Greatest Decrease in Profits: {list_mos[greatest_decrease_mo +1]}({greatest_decrease})")
+    # Print to screen financial analysis
+    print(f"Financial Analysis\n"
+        f"---------------------------\n"
+        f"Total Months: {total_mos}\n"
+        f"Total: {total_pl}\n"
+        f"Average Change: {avg_chg_pl}\n"
+        f"Greatest Increase in Profits: {list_mos[greatest_mo +1]} ({greatest_increase})\n"
+        f"Greatest Decrease in Profits: {list_mos[greatest_decrease_mo +1]}({greatest_decrease})")
 
-            # Print to txt file in Analysis folder
-            financial_analysis_summary = os.path.join("analysis","FinancialAnalysis.txt")
-            with open(financial_analysis_summary, 'w') as txtfile:
-                txtfile.write(f"Financial Analysis\n"
-            f"---------------------------\n"
-            f"Total Months: {total_mos}\n"
-            f"Total: {total_pl}\n"
-            f"Average Change: {avg_chg_pl}\n"
-            f"Greatest Increase in Profits: {list_mos[greatest_mo +1]} ({greatest_increase})\n"
-            f"Greatest Decrease in Profits: {list_mos[greatest_decrease_mo +1]}({greatest_decrease})")
+    # Print to txt file in Analysis folder
+    output_path = os.path.join("analysis","FinancialAnalysis.txt")
+    with open(output_path, 'w') as txtfile:
+        txtfile.write(f"Financial Analysis\n"
+        f"---------------------------\n"
+        f"Total Months: {total_mos}\n"
+        f"Total: {total_pl}\n"
+        f"Average Change: {avg_chg_pl}\n"
+        f"Greatest Increase in Profits: {list_mos[greatest_mo +1]} ({greatest_increase})\n"
+        f"Greatest Decrease in Profits: {list_mos[greatest_decrease_mo +1]}({greatest_decrease})")
             
         
                        
