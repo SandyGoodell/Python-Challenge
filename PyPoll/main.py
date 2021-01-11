@@ -49,11 +49,14 @@ with open(file_to_open, "r") as csvfile:
     for candidate in candidates:
         votes = candidate_votes.get(candidate)
         percentage_votes = (candidate_votes.get(candidate)/total_votes) * 100
-        print(f"{candidate}): ({candidate_votes.get(candidate)}), {percentage_votes:.2f}% \n")
+        print(f"{candidate}: ({candidate_votes.get(candidate)}), {percentage_votes:.2f}% \n")
+        
         # add operator functions in code
     import operator
     winner_elec = max(candidate_votes.items(), key=operator.itemgetter(1)) [0]
-    print(f"Winner: {winner_elec} \n")
+    print(f"-------------------------\n"
+    f"Winner: {winner_elec} \n"
+    f"-------------------------\n")
     # print(percentage_votes)
     # print(votes)
     # Print to txt file in Analysis folder
