@@ -49,7 +49,7 @@ with open(file_to_open, "r") as csvfile:
     for candidate in candidates:
         votes = candidate_votes.get(candidate)
         percentage_votes = (candidate_votes.get(candidate)/total_votes) * 100
-        print(f"{candidate}: ({candidate_votes.get(candidate)}), {percentage_votes:.2f}% \n")
+        print(f"{candidate}: ({candidate_votes.get(candidate)}) {percentage_votes:.2f}% \n")
         
         # add operator functions in code
     import operator
@@ -61,4 +61,16 @@ with open(file_to_open, "r") as csvfile:
     # print(votes)
     # Print to txt file in Analysis folder
     with open(output_path, 'w') as txtfile:
-        txtfile.write(f"text \n")
+        txtfile.write(f"Election Results \n"
+        f"-------------------------\n"
+        f"Total Votes: {total_votes}\n"
+        f"-------------------------\n")
+        for candidate in candidates:
+            votes = candidate_votes.get(candidate)
+            percentage_votes = (candidate_votes.get(candidate)/total_votes) * 100
+            txtfile.write(f"{candidate}: ({candidate_votes.get(candidate)}) {percentage_votes:.2f}% \n")
+        import operator
+        winner_elec = max(candidate_votes.items(), key=operator.itemgetter(1)) [0]
+        txtfile.write(f"-------------------------\n"
+        f"Winner: {winner_elec} \n"
+        f"-------------------------\n")
