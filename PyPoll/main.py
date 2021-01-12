@@ -49,7 +49,7 @@ with open(file_to_open, "r") as csvfile:
     for candidate in candidates:
         votes = candidate_votes.get(candidate)
         percentage_votes = (candidate_votes.get(candidate)/total_votes) * 100
-        print(f"{candidate}: ({candidate_votes.get(candidate)}) {percentage_votes:.2f}% \n")
+        print(f"{candidate}: {percentage_votes:.2f}% ({candidate_votes.get(candidate)}) \n")
         
         # add operator functions in code
     import operator
@@ -68,7 +68,7 @@ with open(file_to_open, "r") as csvfile:
         for candidate in candidates:
             votes = candidate_votes.get(candidate)
             percentage_votes = (candidate_votes.get(candidate)/total_votes) * 100
-            txtfile.write(f"{candidate}: ({candidate_votes.get(candidate)}) {percentage_votes:.2f}% \n")
+            txtfile.write(f"{candidate}: {percentage_votes:.2f}% ({candidate_votes.get(candidate)}) \n") 
         import operator
         winner_elec = max(candidate_votes.items(), key=operator.itemgetter(1)) [0]
         txtfile.write(f"-------------------------\n"
