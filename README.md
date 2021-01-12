@@ -13,12 +13,6 @@ One set of code was helpful that I found on stackoverflow was the division by ze
     avg_chg_pl = sum(diff_column)/len(diff_column)
  except ZeroDivisionError:
     avg_chg_pl = 0'
- 
- 
- Summary from terminal
- ![SummaryAnalysis.jpg] (
-    
-
 ## PyPoll
 Script for analyzing the votes and candidates of election_data.csv The had 3 columns, Voter Id, County and Candidate.
 
